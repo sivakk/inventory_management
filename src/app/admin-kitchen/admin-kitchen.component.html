@@ -1,0 +1,128 @@
+<div class="prog-up"><mat-progress-bar mode="indeterminate" *ngIf='loading' ></mat-progress-bar></div>
+
+<!-- <div class='navBar'>
+  <ngb-tabset justify="justified">
+
+      <div>
+      <ngb-tab><ng-template ngbTabTitle><div routerLink='cook'>Cook</div></ng-template></ngb-tab>
+      </div>
+
+      <div>
+        <ngb-tab><ng-template ngbTabTitle><div routerLink='shipping'>Shipping</div></ng-template></ngb-tab>
+      </div>
+        
+  </ngb-tabset>
+</div>
+
+<router-outlet></router-outlet> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <input type="date" [(ngModel)]="today"  value="numberDate"/>
+    </div>
+      <div class="col-md-6">
+        <h5 class="h-center">Cook</h5>
+        <form class="well Additemformbox container" *ngIf=true>
+
+            <div class="form-group">
+          
+          
+              <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Add Stock...">
+          
+              <input type="number" (keypress)="keyPress($event)" [(ngModel)]="quantity" name="quantity" class="form-control" placeholder="Quantity">
+            
+            </div>
+          
+            <input type="submit" (click)="addItem($event)" value="Add Ingredient"  class="btn btn-primary">
+          
+          </form>
+          
+          <div class="container" style="border-top: 1px solid #ddd; padding-top: 3rem;">
+          
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>S.no</th>
+                    <th>Ingredient</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of items let idx=index">
+                  <tr>
+                    <td>{{item.name}}</td>
+                    <th>{{item.ingredient}}</th>
+                    <td>{{item.measuring_unit}}</td>
+                    <td>{{item.remaining_quantity}}</td>
+                    <td>
+                      <input type="button" (click)="deleteItem(item)" value="Delete" class="btn btn-danger">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+          <h5 class="h-center">Shipping</h5>
+          <form class="well Additemformbox container" *ngIf=true>
+
+              <div class="form-group">
+                    <!-- select Can Name -->
+                <div class="selectCan required">
+                    <span>Can Name</span>
+                    <select name="can_name" ngModel class="form-control">
+                      <option value="" disabled selected>Select Can</option>
+                      <option value="">Test Can</option>
+                      <option *ngFor="let cat of quantity">{{cat}}</option>
+                    </select>
+                </div>
+                    <!-- select tea quantity -->
+                <span>Tea Quantity</span>
+                <input type="range" [(ngModel)]="tea_quantity_range" name="tea_quantity" min="1" max="105">
+                <span>
+                  {{tea_quantity_range}}
+                </span>
+                     <!-- select cart -->
+                     <div class="selectCart required">
+                        <span>Cart</span>
+                        <select name="cart_name" ngModel class="form-control">
+                          <option value="" disabled selected>Select Cart</option>
+                          <option value="">Test Cart</option>
+                          <option *ngFor="let cat of quantity">{{cat}}</option>
+                        </select>
+                    </div>
+              </div>
+              <input type="submit" (click)="addItem($event)" value="Create Can"  class="btn btn-primary">
+            
+          </form>
+
+          <div class="container" style="border-top: 1px solid #ddd; padding-top: 3rem;">
+          
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>S.no</th>
+                    <th>Can Name</th>
+                    <th>Tea quantity</th>
+                    <th>Cart</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of items let idx=index">
+                  <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.measuring_unit}}</td>
+                    <td>{{item.remaining_quantity}}</td>
+                    <td>{{item.cart_name}}</td>
+                    <td>
+                      <input type="button" (click)="deleteItem(item)" value="Delete" class="btn btn-danger">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+  </div>
+</div>

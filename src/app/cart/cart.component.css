@@ -1,0 +1,40 @@
+.example-container {
+    display: flex;
+    
+  }
+  
+  .example-container > * {
+    margin-top: 50px;
+    width: 100px;
+    margin-right: 50px;
+  }
+  
+.kitchenTable table {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.addBoxForm {
+  display: flex;
+  margin-top: 50px;
+}
+
+.addBoxForm div {
+  width: 132px;
+  float: left;
+  margin-right: 30px;
+}
+
+input {
+  width: 100px;
+}
+
+.boxTable {
+  margin-top: 50px;
+}
+
+.required:after { content:" *"; }
+
+.KitchenActions {
+
+}

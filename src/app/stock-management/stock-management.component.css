@@ -1,0 +1,9 @@
+.headings a {
+    width:50%;
+    margin-right: 50%;
+}
+
+.navBar {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}

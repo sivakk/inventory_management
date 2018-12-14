@@ -1,0 +1,65 @@
+<div class="prog-up"><mat-progress-bar mode="indeterminate" *ngIf='loading' ></mat-progress-bar></div>
+
+
+<form class="well Additemformbox" #addInvestmentForm="ngForm" (ngSubmit)="addInvestment(addInvestmentForm)">
+
+  <!-- <h3 style="margin-bottom:1rem;">Add Stock Item</h3> -->
+  <div class="form-group">
+    <input type="date" name="date" value="numberDate" ngModel />
+
+    <input type="text" name="itemName" class="form-control" placeholder="Add Item..." ngModel>
+
+    <input type="number" name="itemAmount" class="form-control" placeholder="Amount" ngModel>
+
+    <input type="number" name="itemAdvance" class="form-control" placeholder="Advance" ngModel>
+
+    <input type="number" name="itemDue" class="form-control" placeholder="Due" ngModel>
+
+    <textarea name="itemDescription" class="form-control" placeholder="Desciption" ngModel></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add</button>
+
+</form>
+
+<div class="container" style="border-top: 1px solid #ddd;     padding-top: 3rem;">
+    <!-- <h3 style="margin-bottom:1rem;">Stock Listing</h3> -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Item name</th>
+          <th>Amount</th>
+          <th>Advance</th>
+          <th>Due</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of investments let idx=index">
+        <tr>
+          <td>{{item.itemName}}</td>
+          <td>{{item.itemAmount}}</td>
+          <td>
+            <div>
+              {{item.itemAdvance}}
+            </div>
+          </td>
+          <td>
+            <div>
+              {{item.itemDue}}
+            </div>
+          </td>
+          <td>{{item.itemDescription}}</td>
+          
+          <td>
+            <input type="button" (click)="deleteInvestment(item)" value="Delete" class="btn btn-danger">
+            <input type="button" (click) = "setEdit()" (click)= "Temp(idx)" value="Update" class="btn btn-primary">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+<!-- <input type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger">     -->

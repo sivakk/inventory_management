@@ -1,0 +1,29 @@
+<div class="prog-up">
+  <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
+</div>
+
+{{errorMsg}}
+
+<div class="container">
+    <h3>Admin Orders</h3>    
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Tea Type</th>
+          <th>Tea Quantity</th>
+          <th>Assigned To</th>
+          <th>Quantity</th>
+          <th>Order Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of items'>
+          <td>{{item.tea_type}}</td>
+          <td>{{item.tea_quantity}}</td>
+          <td>{{item.assigned_to}}</td>
+          <td>{{item.order_quantity}}</td>
+          <td><button value="Received">Received</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

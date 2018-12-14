@@ -1,0 +1,47 @@
+.box {
+    
+}
+
+h3 .options {
+    float: left;
+}
+
+/* .createOrderBox {
+    border: 1px solid #cccccc;
+    background: #999999;
+    width: 20vw;
+    height:20vw;
+    margin: auto;
+    padding: 20px;
+    float: left;
+
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.createOrderIngredient {
+    border: 1px solid #cccccc;
+    background: #999999;
+    width: 20vw;
+    height:20vw;
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+} */
+
+.ordersBox {
+    
+}
+
+.createOrder select, .createOrder input{
+    margin-right:2.5rem;
+}
+.createOrder select, .createOrder input, .createOrder button.ctr {margin-bottom: 20px;}
+
+ .createOrder input::placeholder, .createOrder select {color: #bbb;}

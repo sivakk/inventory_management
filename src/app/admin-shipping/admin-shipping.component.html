@@ -1,0 +1,50 @@
+<div class="col-md-12">
+  Can Name:
+  Tea quantity:
+  Cart: 
+</div>
+
+<div class="container" style="border-top: 1px solid #ddd;     padding-top: 3rem;">
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Can name</th>
+          <th>Tea Quantity</th>
+          <th>Cart</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of items let idx=index">
+        <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.measuring_unit}}</td>
+          <td>
+            <div *ngIf="editMode">
+              {{item.cost}}
+            </div>
+            <div *ngIf="!editMode">
+              <input placeholder = {{item.cost}} [(ngModel)]='item.cost' name="cost">
+            </div>
+          </td>
+          <td>
+            <div *ngIf="editMode">
+              {{item.quantity}}
+            </div>
+            <div *ngIf="!editMode">
+              <input placeholder = {{item.quantity}} [(ngModel)]='updateQuantity' name="quantity">
+            </div>
+          </td>
+          <td>{{item.remaining_quantity}}</td>
+          
+          <td>
+            <input *ngIf="editMode" type="button" (click)="deleteItem(item)" value="Delete" class="btn btn-danger">
+            <input *ngIf="editMode" type="button" (click) = "setEdit()" (click)= "Temp(idx)" value="Update" class="btn btn-primary">
+            <input *ngIf="!editMode && displayRow == idx" type="button" (click) = "setEdit()" (click)='updateItem(item)' value="Apply" class="btn btn-primary">
+            <input *ngIf="!editMode && displayRow == idx" type="button" (click) = "Temp(idx)" (click)="setEdit()" value="Cancel" class="btn btn">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

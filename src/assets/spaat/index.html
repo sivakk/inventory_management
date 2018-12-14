@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+   ================================================== -->
+    <meta charset="utf-8">
+    <title>wop.company - Lets Start-up</title>
+    <meta name="description" content="wop.company : The trendiest and the wackiest breed of IT specialists to help you build you IT products & bring your ideas to life.">
+    <meta name="author" content="Amit Shaw">
+
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+    <!-- script
+   ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+	================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+    
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100|Pacifico');
+
+.links {
+  stroke: #ddd;
+  stroke-opacity: 0.6;
+  
+}
+
+.polygons {
+  fill="url(#grad1)"
+  stroke: #fff;
+  transition: all 0.3s ;
+}
+
+.polygons :first-child {
+  fill: #fff;
+  transition: all 0.5s linear;
+}
+
+.sites {
+  fill: #fff;
+  stroke: #ff6868;
+  transition: all 0.3s ease;
+  stroke-width: 2;
+}
+
+.sites :first-child {
+  fill: #000;
+   stroke: #000;
+   stroke-width: 10;
+   
+}
+.d3chart {}
+.verticalEther, .verticalEther-2, .verticalEther-3, .verticalEther-4 { position: absolute; width: 10px; background: white; height: 100%; }
+.horizontalEther, .horizontalEther-2, .horizontalEther-3 { position: absolute;  background: white; height: 10px; }
+
+.wop-logo {    width: 100%;
+    float: left;
+    text-align: center;}
+    .wop-logo a {     display: inline-block;
+    width: 150px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    margin-left: 50px;}
+
+    .home-content-left h1.ground-header {    position: relative;
+    font-size: 4rem;
+    margin: 10rem;
+    width: 50%;
+    text-align: left;
+ 
+}
+.wop-content {     position: absolute;
+    top: 0;     height: 0;}
+    .wop-content p {    margin: 10rem 10rem;
+    text-align: center;
+    float: left;
+    padding: 3rem 6rem;
+        color: #777;
+    font-size: 1.5rem;
+        background: #fff;
+    mix-blend-mode: luminosity;
+}
+.wop-content p span {
+
+    color: #ff6868;
+}
+    .oppertunity {     transform: scale(0.618);
+    transform-origin: right top;  }
+
+    .gifcont {     float: left;
+    width: 16%;
+    position: relative;
+    padding: 3px; }
+    #home {     display: block;    }
+    .soultext {    position: absolute;
+    top: 10rem;
+    left: 0;
+    overflow: hidden;     width: 20rem;     height: 24rem;}
+    .soultext h1 { top: -10.2rem; }
+
+    .gifrow {    width: 100%;
+    float: left;     transform: rotateX(180deg); -webkit-filter: blur(5px); transition: all 0.5s ease;}
+    .gifrow-2 {    width: 38.19%;
+    float: left;}
+    .gridD-b { width : 382px; height : 236px; float: left;  background: black; margin: 1.6px; overflow: hidden;     transform: rotatex(180deg);}
+        .gridD-m { width : 236px; height : 145px; float: left; background: black; margin: 1.6px; overflow: hidden;     transform: rotatex(180deg);}
+                .gridD-sm { width : 145px; height : 90px; float: left; background: black; margin: 1.6px; overflow: hidden; }
+                        .gridD-xs { width : 90px; height : 55px; float: left;  background: black; margin: 1.6px; overflow: hidden;     transform: rotatex(180deg);}
+
+                        .innerD-1 {width : 61.80%; height: 38.19%;  margin: 1.6px; float: left; overflow: hidden;     background-size: contain;     -webkit-filter: blur(10px); transition: all 0.3s ease;}
+                        .innerD-2 {width : 36%; height: 38.19%; background-size: contain; margin: 1.6px; float:left; overflow: hidden;     -webkit-filter: blur(10px); transition: all 0.3s ease;}
+                        .gridD-m .innerD-2 { width : 35%; }
+                        .gridD-sm .innerD-2 { width : 33%; }
+                        .gridD-xs .innerD-2 { width : 31%; }
+                         .innerD-1:hover {-webkit-filter: blur(0px);}
+                          .innerD-2:hover { -webkit-filter: blur(0px); }
+
+                        .gif-1 {background-image: url(https://media.giphy.com/media/144KVzA96j93r2/giphy.gif);  }
+                        .gif-2 {background-image: url(https://media.giphy.com/media/KA593kO0JvXMs/giphy.gif);  }
+                        .gif-3 {background-image: url(https://media.giphy.com/media/9ZL5EhLHNCKDm/giphy.gif);  }
+
+                        .execution-header {        width: 50%;
+    text-align: center;
+    margin: auto;
+    color: #fff;
+    margin-top: 20rem;
+    font-size: 4rem;
+       background: linear-gradient(to right, #d411ec2e, #276fe82e);
+    mix-blend-mode: hard-light;
+    box-shadow: inset 0 0px 20px 1px #0000001c;
+
+}
+.execution-sum {        color: #00fff7;
+    width: 38.2%;
+    text-align: center;
+    float: right;
+    top: 10rem;
+    position: relative;
+    right: 10rem;
+    background: linear-gradient(to right, #5600ff40 , #ab27e854);
+    border-radius: 5rem 0.4rem ;
+    padding: 1rem 2rem; box-shadow: inset 0 -2px 15px 1px;     mix-blend-mode: hard-light; }
+    .wop-content p.execution-para {    color: #00fff7;
+    text-align: center;
+    margin: 0;
+    line-height: normal;
+    width: 60.8%;
+    position: relative;
+    top: 25rem;
+    float: left;
+    background: linear-gradient(to right, #5600ff40 , #ab27e854);
+    border-radius: 5rem 0.4rem;
+    padding: 1rem 2rem;
+font-weight: 700; box-shadow: inset 0 -2px 15px 1px;  mix-blend-mode: hard-light;}
+
+                   /*     
+                        .gif-4 {background-image: url(https://media.giphy.com/media/3oriNU0ZF7vAHESLq8/giphy.gif); background-size: cover; }
+                        .gif-5 {background-image: url(https://media.giphy.com/media/144KVzA96j93r2/giphy.gif);  background-size: cover;}
+                        .gif-6 {background-image: url(https://media.giphy.com/media/3oriO29MMgIMzYEhzy/giphy.gif); background-size: contain; }
+                        .gif-7 {background-image: url(https://media.giphy.com/media/3oriNZE0lDpMCcR8Fq/giphy.gif); }
+                        .gif-8 {background-image: url(https://media.giphy.com/media/3oriNW9mj3k3Atce4w/giphy.gif); background-size: cover; }
+                        .gif-9 {background-image: url(https://media.giphy.com/media/144KVzA96j93r2/giphy.gif);  background-size: cover;}   */
+                        
+
+                        .hiding { opacity: 0; -webkit-filter: blur(10px); transition: opacity 0.5s linear;}
+                        .showing { opacity: 1; -webkit-filter: blur(0px); transition: opacity 0.5s linear;}
+                        .parallax-mirror {display: none;}
+
+
+                        .psyche {background-image: url(.images/psyche.jpg);}
+
+                        #chemistry {    
+                         
+    height: 1200px;
+    overflow: hidden; 
+    background: #fff;
+      
+        
+  }
+   #chemistry .row { 
+   
+        margin: 0;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    
+  }
+   
+   @keyframes blink {
+   0% {background: yellow;  }
+    35% {background: white; }
+    70% { background: pink; }
+    100% { background: white;   }
+   }
+     #chemistry svg {
+      transform: scale(1.3) translateY(-53rem);
+    
+    mix-blend-mode: color-dodge;
+
+   animation-name: blink;
+    animation-duration: 1.618s;
+    animation-timing-function:  linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+    
+       
+     }
+     .change { background: url(images/psych.jpg);
+    height: 925px;
+    overflow: hidden; 
+        background-size: cover;     position: relative;
+      animation-name: rotateP;
+    animation-duration: 1.618s;
+    animation-timing-function:  linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    top:0;
+    left:0;
+    width: 100%;
+      -webkit-filter: invert(1);
+    }
+    @keyframes rotateP {
+   0% {transform:  rotate(0deg); }
+    35% {transform: rotate(1deg);}
+    70% { transform:  rotate(0deg); }
+    100% { transform:  rotate(-1deg);   }
+   }
+
+
+   #chemistry .wop-content {    top: 65rem;     width: 100%;     mix-blend-mode: darken; }
+
+   .svgCover {    height: 925px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+    .contcont {    position: absolute;
+    background: #fffffff2;
+    width: 100%;
+    }
+    .contcont h1 { color: #000;     margin: 8rem auto;
+    background: none;
+    box-shadow: none;
+        width: 55%;
+    font-size: 3.5rem; }
+    .exProduct {     width: 100%;
+    text-align: center;
+    margin-top: -2rem;
+    background: #fff;
+    position: relative;
+        float: left; }
+    .exProduct .execution-sum {     color: #000;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+    right: 0;
+    font-size: 4rem;     float: left; }
+    .exProduct .para-width {float: left;
+    width: 100%;
+    font-size: 3rem;
+    margin-top: 7rem;}
+
+
+
+
+
+
+
+
+    .home {background-image: url(https://media.giphy.com/media/aKjaEWISv9Ie4/giphy.gif); background-size: cover;
+    transform: rotate(180deg);
+    background-position: 54% 67px;
+    background-repeat: no-repeat;
+    background-color: #fff;}
+
+
+  .headtext {font-family: 'IBM Plex Sans', sans-serif; cursive;     font-size: 17rem;
+    text-align: center;
+        color: #fff;
+   
+    position: relative;
+    top: 5rem;
+    mix-blend-mode: hard-light;
+    font-weight: 100;
+   animation-name: textani;
+    animation-duration: 25s;
+    animation-timing-function:  linear;
+        -webkit-font-smoothing: antialiased;
+        animation-iteration-count: infinite;
+  }
+  .headtext2 {  position: absolute; 
+    font-family: 'IBM Plex Sans', sans-serif; cursive;     font-size: 17rem;
+    text-align: center;
+        color: #fff;
+    top: 19.6rem;
+    mix-blend-mode: hard-light;
+    font-weight: 100;
+   animation-name: textaniyellow;
+    animation-duration: 25s;
+    animation-timing-function:  linear;
+        -webkit-font-smoothing: antialiased;
+        animation-iteration-count: infinite;
+          width: 100%;
+        }
+
+
+    .subhead {font-family: 'Pacifico', cursive; text-align: center;
+    position: relative;
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 100;
+    margin-top: 2rem;
+  animation-name: textanind;
+    animation-duration: 3s;
+    animation-timing-function:  linear;
+        -webkit-font-smoothing: antialiased;}
+
+ @keyframes textani {
+   0% {letter-spacing: 6rem; -webkit-filter: blur(10px); opacity: 1;  }
+   10% {letter-spacing: 0rem; -webkit-filter: blur(0px); opacity: 1; }
+   25% { letter-spacing: 0rem; -webkit-filter: blur(0px); opacity: 1;    }
+   50% { letter-spacing: 6rem; -webkit-filter: blur(10px); opacity: 0;  }
+   100% { letter-spacing: 6rem; -webkit-filter: blur(10px); opacity: 1;   }
+   }
+   @keyframes textaniyellow {
+   0% {letter-spacing: 6rem; -webkit-filter: blur(10px); opacity: 0;  }
+   25% { letter-spacing: 6rem; -webkit-filter: blur(10px); opacity: 0;    }
+   50% { letter-spacing: 0rem; -webkit-filter: blur(0px); opacity: 1;  }
+   75% { letter-spacing: 0rem; -webkit-filter: blur(0px); opacity: 1;  }
+   100% { letter-spacing: 6rem; -webkit-filter: blur(10px); opacity: 0;   }
+   }
+
+    @keyframes textanind {
+   0% {letter-spacing: -2rem; -webkit-filter: blur(20px); color: pink; }
+   50% {letter-spacing: -1rem; -webkit-filter: blur(5px); color: pink; }
+   
+    100% { letter-spacing: 0rem; -webkit-filter: blur(0px); color: #ffffff;  }
+   }
+
+
+.starspice {background-image: url(images/start-spice.png); width: 250px; height: 200px;     margin: auto;     background-size: 92%;
+    top: 15rem;
+    position: relative; background-repeat: no-repeat;
+    background-position: center; 
+     filter: drop-shadow(2px 5px 6px #00000069);
+   }
+
+   .dry1, .dry2, .dry3 {background-image: url(images/dry1.png); width: 123px; height: 100px;     margin: auto;     background-size: 30%;
+    top: 31rem;
+    position: absolute; background-repeat: no-repeat;
+    background-position: center; 
+     filter: drop-shadow(2px 5px 6px #00000039);     right:17px;}
+
+    
+     .dry2 {  right:53px;   top: 4rem; transform: rotate(-272deg);}
+     .dry1, .dry2, .dry3 {transform: rotate(-272deg);}
+     .dry3 {  right: 5vh;   top: 4rem;}
+     .dry1 {     top: 6rem; }
+     .dryCover {    position: absolute;
+    transform: rotate(-455deg);
+    left: 40rem;
+    bottom: -16rem;}
+   .gifminon { background-image: url(https://media.giphy.com/media/1iWIRqnFyIiys/giphy.gif);     width: 545px;
+    height: 250px;
+    background-size: cover;
+    left: 26rem;
+    position: relative;
+    margin: 10rem;
+    margin-top: 5rem;
+     }
+   .headminon {font-family: 'Pacifico', cursive;     text-align: center;
+    font-size: 3rem;
+    color: #199192;
+
+    padding: 20rem 20rem 0 20rem;
+  }
+
+</style>
+
+<script>
+    
+
+
+
+     
+</script>
+
+
+</head>
+
+<body id="top">
+
+    <!-- header 
+   ================================================== -->
+   <header id="header"  >   
+
+   		<!--<div class="header-logo">-->
+            <div class="row">
+		<div class="wop-logo">
+	        <a href="index.html"> <img src="images/logo-wop.jpg" style="float: left; width: 100%; margin-top: 50px"> 
+               <!-- <h1 class="logohead">papwork<br><span class="logotag">tap tap done</span></h1>  --> </a>
+	    </div>
+
+	   	<nav id="header-nav-wrap" >
+			<ul class="header-main-nav" >
+				<li class="current"><a class="smoothscroll"  href="#home" title="home">Chai</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">Spaat Us</a></li>
+				<li><a class="smoothscroll"  href="#pricing" title="pricing">Social Impact</a></li>
+			</ul>
+
+           <!-- <a href="#" title="sign-up" class="button button-primary cta">Sign Up</a> -->
+		</nav>
+
+		<a class="header-menu-toggle" href="#"><span>Menu</span></a>    	
+   	</div>
+   </header> <!-- /header -->
+
+
+   <!-- home
+   ================================================== -->
+   <section id="home" data-parallax="scroll" data-image-src="" data-natural-width=3000 data-natural-height=2000 class="home">
+
+        <div class="overlay"></div>
+
+        <div class="home-content" id="box">        
+
+ 
+          <h1 class="headtext">Kashmiri</h1> <h1 class="headtext2">Qawah</h1>
+          <h3 class="subhead">A chai served to refresh your soul.</h3>
+<div class="dryCover">
+               <div  class="starspice" ></div>
+               <div  class="dry1" ></div>
+                <div  class="dry2" ></div>
+                 <div  class="dry3" ></div>
+           </div>
+
+        </div> <!-- end home-content -->
+
+        <ul class="home-social-list">
+            <li>
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+            </li>
+        </ul>
+        <!-- end home-social-list -->
+
+        <div class="home-scrolldown">
+            <a href="#about" class="scroll-icon smoothscroll">
+                <span>Scroll Down</span>
+                <i class="icon-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </section> <!-- end home -->  
+
+<section>
+  
+  <div class="container">
+    <div class="headminon">Kidar Milengey Pattey?? Apne Spaat Pe Yaaro! </div>
+    <div class="gifminon"></div>
+
+  </div>
+
+</section>
+
+    <div id="preloader"> 
+    	<div id="loader"></div>
+    </div>  
+
+    <script>
+
+
+
+
+
+
+    </script>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+ 
+
+  
+
+</body>
+
+</html>

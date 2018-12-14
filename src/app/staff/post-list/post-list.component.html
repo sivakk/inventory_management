@@ -1,0 +1,120 @@
+<div *ngFor="let user of users1">
+
+  <div class="container bootstrap snippet">
+    <mat-card>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="text-center post-image">
+            <img [src]="user.imagedisplay" class="" alt="avatar">
+          </div>
+
+          <a mat-button color="primary" [routerLink]="['/edit', user._id]">EDIT</a>
+        </div>
+
+
+
+
+        <div class="col-sm-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <form class="form" action="##" method="post" id="registrationForm">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <label for="first_name">
+                        <h5>Name: {{user.name}}</h5>
+                      </label>
+                    </div>
+                    <div class="col-sm-4">
+                      <p>{{today5}}</p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="form-group">
+                  <div class="col-xs-5 ">
+                    <label for="last_name">
+                      <h5>Username: {{user.username}}</h5>
+                    </label>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+
+
+          <div class="col align-self-end"></div>
+          <div class="row">
+            <div class="col-auto mr-auto"></div>
+            <mat-spinner *ngIf="isLoading1"></mat-spinner>
+            <div class="col-auto" *ngIf="!isLoading1">Startjob:{{jobstarttime}}</div><br>
+            <div class="">Jobdone:{{totaltime}}</div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+    </mat-card>
+
+    <hr>
+
+    <mat-card>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-5">
+            <button type="button" (click)="startClick()" [disabled]=" jobstarted" class="btn btn-primary btn-lg">Start
+              Job</button>
+          </div>
+
+          <div class="col-4">
+            <p> </p>
+          </div>
+
+          <div class="col-sm">
+            <button type="button" (click)="stopClick()" [disabled]="jobended" class="btn btn-danger btn-lg btn btn-danger">
+              Stop job</button>
+          </div>
+
+        </div>
+      </div>
+    </mat-card>
+
+    <hr>
+
+
+    <mat-card>
+      <form (ngSubmit)="addIssues(frm)" #frm="ngForm">
+
+        <h2>Raise issue</h2>
+        <div class="form-group">
+          <label>Select issue :</label>
+          <select class="form-control" [(ngModel)]="selectedValue" name="issueName" style="margin-bottom: 20px;">
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            <option>
+          </select>
+
+          <label>Comment :</label>
+          <input type="text" class="form-control" name="issueComment" [(ngModel)]="issueComment">
+        </div>
+        <button type="submit" name="button" class="btn btn-success" [disabled]=frm.invalid>Add
+          Issue</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+<router-outlet></router-outlet>

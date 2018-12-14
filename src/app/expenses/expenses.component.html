@@ -1,0 +1,53 @@
+<div class="prog-up"><mat-progress-bar mode="indeterminate" *ngIf='loading' ></mat-progress-bar></div>
+
+
+<form class="well Additemformbox" *ngIf=true>
+
+  <!-- <h3 style="margin-bottom:1rem;">Add Stock Item</h3> -->
+  <div class="form-group">
+
+    <input type="date" value="numberDate"/>
+
+    <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Add Item...">
+    <input type="number" (keypress)="keyPress($event)" [(ngModel)]="cost" name="cost" class="form-control" placeholder="Amount">
+    <textarea (keypress)="keyPress($event)" [(ngModel)]="quantity" name="quantity" class="form-control" placeholder="Desciption"></textarea>
+
+  
+  </div>
+
+  <input type="submit" (click)="addItem($event)" value="Add Investment"  class="btn btn-primary">
+
+</form>
+
+<div class="container" style="border-top: 1px solid #ddd;     padding-top: 3rem;">
+    <!-- <h3 style="margin-bottom:1rem;">Stock Listing</h3> -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Item name</th>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of items let idx=index">
+        <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.amount}}</td>
+          <td>{{item.desciption}}</td>
+          <td>{{item.acitons}}</td>
+          
+          <td>
+            <input *ngIf="editMode" type="button" (click)="deleteItem(item)" value="Delete" class="btn btn-danger">
+            <input *ngIf="editMode" type="button" (click) = "setEdit()" (click)= "Temp(idx)" value="Update" class="btn btn-primary">
+            <input *ngIf="!editMode && displayRow == idx" type="button" (click) = "setEdit()" (click)='updateItem(item)' value="Apply" class="btn btn-primary">
+            <input *ngIf="!editMode && displayRow == idx" type="button" (click) = "Temp(idx)" (click)="setEdit()" value="Cancel" class="btn btn">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+<!-- <input type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger">     -->

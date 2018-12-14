@@ -1,0 +1,18 @@
+<div class="prog-up"><mat-progress-bar mode="indeterminate" *ngIf='loading' ></mat-progress-bar></div>
+
+<div class="container">
+    <ngb-tabset justify="justified">
+
+      <div>
+      <ngb-tab><ng-template ngbTabTitle><div routerLink='investment'>Investment</div></ng-template></ngb-tab>
+      </div>
+
+      <div>
+      <ngb-tab><ng-template ngbTabTitle><div routerLink='expenses'>Expenses</div></ng-template></ngb-tab>
+      </div>
+
+    </ngb-tabset>
+</div>
+
+
+<router-outlet></router-outlet>

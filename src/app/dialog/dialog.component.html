@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Add ingredient: {{data.category}}</h1>
+
+<div class="container">
+  <form #addIngredientForm="ngForm" (ngSubmit)="addIngredient(addIngredientForm)">
+        
+      <select name="ingredient_name" ngModel>
+          <option value="" disabled selected>Ingredient</option>
+          <option *ngFor="let cat of data.stock">{{cat.stock_name}}</option>
+      </select>
+
+      <br>
+
+      <p>Add quantity</p>
+
+      <mat-form-field>
+        <input matInput type="number" name="ingredient_quantity" ngModel>
+      </mat-form-field>
+
+      <br>
+
+      <input id="no_display" type="text" name="tea_type_id" [(ngModel)]="data._id" ngModel>
+      <input id="no_display" type="text" name="raw_cost" [(ngModel)]="data.raw_cost" ngModel>
+
+      <button type="submit">Add Ingredient</button>
+
+      <!--
+        mat-button [mat-dialog-close]="data" cdkFocusInitial 
+        matInput [(ngModel)]='data.ingredient_name' 
+        matInput [(ngModel)]='data.ingredient_quantity'
+      -->
+
+  </form>
+</div>
+
+<div class="container boxTable">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Ingredient</th>
+            <th>Ingredient Quantity</th>
+            <th>Actions</th>
+    
+          </tr>
+        </thead>
+        <tbody id="ingredientsTable">
+          <tr  *ngFor='let item of data.ingredients; let i = index' [attr.data-index]="i">
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td><button *ngIf='item.name && item.quantity'>Delete</button></td>
+          </tr>
+        </tbody>
+      </table>      
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <!-- <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button> -->
+</div>

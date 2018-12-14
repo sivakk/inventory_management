@@ -1,0 +1,56 @@
+
+<div class="container addBoxForm">
+  <form #addCartForm="ngForm" (ngSubmit)="addCart(addCartForm)">
+
+    <div class="inputCartName input required">
+      <input type="text" placeholder="Cart Name" name="cart_name" ngModel>
+    </div>
+
+    <div class="location required">
+      <input type="text" placeholder="location" name="location" ngModel>
+    </div>
+
+    <div class="admin input">
+      <select name="assign_admin" ngModel>
+        <option value="" disabled selected>Assign an admin</option>
+        <option *ngFor="let cat of admins">{{cat.name}}</option>
+      </select>
+    </div>
+
+    <div class="staff input">
+      <select name="assign_staff" ngModel>
+        <option value="" disabled selected>Assign staff</option>
+        <option *ngFor="let cat of staff">{{cat.name}}</option>
+      </select>
+    </div>
+
+    <button type="submit">Add Cart</button>
+  </form>
+
+</div>
+
+<div class="container boxTable">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Cart name</th>
+            <th>Location</th>
+            <th>Assigned Admin</th>
+            <th>Assigned Staff</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let item of carts'>
+            <td>{{item.cart_name}}</td>
+            <td>{{item.location}}</td>
+            <td>{{item.assign_admin}}</td>
+            <td>{{item.assign_staff}}</td>
+            <td> 
+              <input type='button' value='Edit' class="btn btn-primary" (click)="giveAlert()">
+              <input type='button' value='Delete' class="btn btn-danger" (click)="deleteKitchenItem(item)">
+            </td>
+          </tr>
+        </tbody>
+      </table>      
+</div>

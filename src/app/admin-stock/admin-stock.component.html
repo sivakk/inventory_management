@@ -1,0 +1,34 @@
+<div class="prog-up"><mat-progress-bar mode="indeterminate" *ngIf='loading' ></mat-progress-bar></div>
+
+
+<div class="container" style="border-top: 1px solid #ddd;     padding-top: 3rem;">
+    <!-- <h3 style="margin-bottom:1rem;">Stock Listing</h3> -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Item name</th>
+          <th>Measuring Unit</th>
+          <th>Unit Cost</th>
+          <th>Quantity</th>
+          <th>Remaining quantity</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of stock let idx=index">
+        <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.measuring_unit}}</td>
+          <td>
+            <div >
+              {{item.cost}}
+            </div>
+          </td>
+          <td>
+            <div>
+              {{item.quantity}}
+            </div>
+          </td>
+          <td>{{item.remaining_quantity}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

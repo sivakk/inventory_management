@@ -1,0 +1,55 @@
+<div class="prog-up"><mat-progress-bar mode="indeterminate" *ngIf='loading' ></mat-progress-bar></div>
+<div class="row">
+    <div class="col-md-6">
+        <form style="border:1px solid #ccc" #addUserForm="ngForm" (ngSubmit)="addUser(addUserForm)">
+          <div class="container">
+            <h1>Add user</h1>
+            <hr>
+
+            <label for="name"><b>Name</b>*</label>
+            <input type="text" placeholder="Name" name="name" required ngModel>
+
+            <label for="username"><b>Username</b>*</label>
+            <input type="text" placeholder="Username" name="username" required ngModel>
+
+            <label for="password"><b>Password</b>*</label>
+            <input type="password" placeholder="Password" name="password" required ngModel>
+
+            <label for="type"><b>Type</b>*</label>
+            <select class="form-control" id="accountType" name="type" required ngModel>
+              <option selected disabled>Select a user type</option>
+              <option *ngFor='let u of userTypes'>{{u}}</option>
+
+            </select>
+
+
+            <div class="clearfix">
+              <button type="submit" class="signupbtn">Add User</button>
+            </div>
+          </div>
+        </form>
+    </div>
+
+    <div class="col-md-6 userTable">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Type</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let user of users'>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.type}}</td>
+                <td><input type='button' value='Delete' (click)='deleteUser(user)' class="btn btn-danger"></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

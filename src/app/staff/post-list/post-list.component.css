@@ -1,0 +1,46 @@
+@import '~ngx-toastr/toastr.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.circle-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  background-position-y: 25%
+}
+
+.post-image {
+
+  border-radius: 50%;
+  background-color: #ddd;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.post-image img {
+
+  height: 5rem;
+  margin: 1rem 0;
+  /* box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); */
+}
+
+.input[type="file"] {
+  visibility: hidden;
+}

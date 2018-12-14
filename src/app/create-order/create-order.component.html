@@ -1,0 +1,99 @@
+<div class="prog-up">
+  <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
+</div>
+
+<div class="container">
+
+  <div class="ordersBox">
+    <div class='createOrderBox'>
+
+      <h3>Create an order</h3>
+
+      <form class="createOrder" #addBoxOrderForm="ngForm" (ngSubmit)="addBoxOrder(addBoxOrderForm)">
+        <div class="row">
+          <div class="col-lg-6">
+            <span>To </span>
+            <select id='options' name="assigned_to" ngModel class="form-control">
+              <option value="" disabled selected class="placeholder">Select User</option>
+              <option *ngFor='let user of admins'>{{user.name}}</option>
+            </select>
+
+            <span>Order Type</span>
+            <select class="form-control" name='order_type' (change)="OrderValChanged($event.target.value)" ngModel>
+              <option value="" disabled selected class="placeholder">Select Box or Stock</option>
+              <option>Box</option>
+              <option>Stock</option>
+            </select>
+
+            <!-- div exclusive for box order -->
+            <div *ngIf='showBoxOrder'>
+              <span>Tea Type </span>
+              <select id='options' name="tea_type" ngModel class="form-control">
+                <option value="" disabled selected>Tea Type</option>
+                <option *ngFor='let cat of boxes'>{{cat.category}}</option>
+              </select>
+
+              <span>Tea Quantity</span>
+              <select id='options' name="tea_quantity" ngModel class="form-control">
+                <option value="" disabled selected>Tea Quantity</option>
+                <option *ngFor='let cat of categories'>{{cat.tea_quantity}}</option>
+              </select>
+
+              <span>Order Quantity</span>
+              <input type="number" placeholder="order quantity" name="order_quantity" ngModel class="form-control">
+            </div>
+          </div>
+
+          <!-- adding stock to order -->
+          <div *ngIf='showStockOrder' class="col-lg-6">
+            <span>Stock</span>
+            <select id='options' name="stock" ngModel class="form-control">
+              <option value="" disabled selected>Stock Name</option>
+              <option *ngFor='let item of stock'>{{item.stock_name}}</option>
+            </select>
+
+            <span>Stock Quantity</span>
+            <input type="number" placeholder="please enter quantity" name='stock_quantity' ngModel class="form-control">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary ctr">Create Order</button>
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <div class="row box">
+    <div class="col-lg-12">
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Assigned to</th>
+            <th>Tea type</th>
+            <th>Tea Quantity</th>
+            <th>Order Quantity</th>
+            <th>Stock</th>
+            <th>Stock quantity</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let box of orders'>
+            <td>{{box.assigned_to}}</td>
+            <td>{{box.tea_type}}</td>
+            <td>{{box.tea_quantity}}</td>
+            <td>{{box.order_quantity}}</td>
+            <td>{{box.stock}}</td>
+            <td>{{box.stock_quantity}}</td>
+            <td>Shipped</td>
+            <td><input type='button' value='Delete' class="btn btn-danger" (click)="deleteOrder(box)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
